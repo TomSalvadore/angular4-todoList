@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-body">
+
+      <form (ngSubmit) = "addTodo()">
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInput">Tâche : </label>
+            <input type="text" class="form-control mb-2 mb-sm-0" id="inlineFormInput" placeholder="Entrez une tâche"  name="todo" [(ngModel)]="list.todo">
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+          </div>
+        </div>
+      </form>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="row" *ngFor="let todo of todoList">
+              <div class="col-md-1"><input class="form-check-input" type="checkbox" name="done" [(ngModel)]="todo.done" (ngModelChange)="checkDone()"></div>
+              <div class="col-md-10" [ngClass]="{'line': todo['done'] === true}">{{todo.todo}}</div>
+              <div class="col-md" (click)="deleteOne(todo['todo'])"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+            </div>
+          </div>
+        </div><br>
+
+      <button type="button" [disabled]="btnDisabled" class="btn btn-danger" (click)="deleteAll()" >Supprimer les tâches réalisées</button>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+form {margin-bottom: 50px}
+.col-md-1 {padding-left: 30px}
+.row {margin-bottom: 30px}
+.line {text-decoration: line-through}
+.fa-trash-o {cursor: pointer}
+.btn-danger {cursor: pointer}
+.btn-danger:disabled {cursor: no-drop}
